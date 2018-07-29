@@ -1,0 +1,27 @@
+{
+  "name": "electronic-youdao",
+  "version": "1.0.0",
+  "description": "跨平台的有道云笔记客户端",
+  "main": "./src/app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "electron": "^2.0.5",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a630140621/electronic-youdao.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a630140621/electronic-youdao/issues"
+  },
+  "homepage": "https://github.com/a630140621/electronic-youdao#readme"
+}

@@ -15,14 +15,15 @@ function createWindow() {
         height: 600,
         show: false,
         // frame: false,
-        autoHideMenuBar: true,  // 自动隐藏菜单栏, 按 alt 键显示
+        autoHideMenuBar: true, // 自动隐藏菜单栏, 按 alt 键显示
     })
 
     // 加载 有道云地址
     win.loadURL('https://note.youdao.com/web/#/file/recent')
 
+    let webContents = win.webContents
     // 打开开发者工具
-    if (settings['dev']) win.webContents.openDevTools()
+    if (settings['dev']) webContents.openDevTools()
 
     // 最大化窗口
     win.maximize()
@@ -36,12 +37,26 @@ function createWindow() {
         console.log('window closed')
     })
 
-    win.on('focus', () => {
+    win.on('focus', (event) => {
         console.log('focus')
     })
 
     win.on('maximize', () => {
         console.log('maximize');
+    })
+
+
+    // dom 加载完毕触发
+    webContents.on('dom-ready', () => {
+        // 修改原有的布局, 1. 隐藏 header 部分
+        webContents.insertCSS(`
+        header div.top-banner {
+            display: none;
+        }
+        div.main-container {
+            top: 0;
+        }
+        `)
     })
 }
 
