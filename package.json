@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "electron ."
+    "start": "electron src/app.js"
   },
   "repository": {
     "type": "git",

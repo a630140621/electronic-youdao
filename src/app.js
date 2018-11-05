@@ -34,15 +34,15 @@ function createWindow() {
         // 通常会把多个 window 对象存放在一个数组里面，
         // 与此同时，你应该删除相应的元素。
         win = null
-        console.log('window closed')
+        // console.log('window closed')
     })
 
     win.on('focus', (event) => {
-        console.log('focus')
+        // console.log('focus')
     })
 
     win.on('maximize', () => {
-        console.log('maximize');
+        // console.log('maximize');
     })
 
 
